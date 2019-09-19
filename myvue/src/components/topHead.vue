@@ -11,7 +11,7 @@
     
     >
       <el-menu-item index="1" class="mylogo">
-        <img src="../assets/logo.png" alt />
+        <img src="../assets/logo.png" alt  class="myimg"/>
       </el-menu-item>
       <el-submenu index="2">
         <template slot="title">我的工作台</template>
@@ -38,19 +38,40 @@
       <el-menu-item index="4" class="mes">
         <a href="https://www.ele.me" target="_blank">订单管理</a>
       </el-menu-item>
-        <el-menu-item index="7" class="myrz">我要入驻</el-menu-item>
+        <el-menu-item index="7" class="myrz"><router-link to="/">我要入驻</router-link></el-menu-item>
     </el-menu>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
 </script>
 
 <style>
 .el-menu--horizontal>.mylogo{
     margin-left:150px;
-    margin-top: -3px;
+    padding: 11px 0;
+}
+
+.myimg {
+    width: 200px;
+    height: 36px;
+    float: left;
+    margin-left: 0;
+   margin-top: 0;
+
 }
 
 
